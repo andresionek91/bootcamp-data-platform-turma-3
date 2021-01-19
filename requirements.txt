@@ -1,0 +1,12 @@
+-e .
+aws_cdk.aws_s3==1.85.0
+aws_cdk.aws_glue==1.85.0
+aws_cdk.aws_iam==1.85.0
+aws_cdk.aws_athena==1.85.0
+aws_cdk.aws_kinesisfirehose==1.85.0
+aws_cdk.aws_kinesis==1.85.0
+aws_cdk.aws_rds==1.85.0
+aws_cdk.aws_ec2==1.85.0
+aws_cdk.aws_dms==1.85.0
+aws_cdk.aws_emr==1.85.0
+aws_cdk.aws_redshift==1.85.0
