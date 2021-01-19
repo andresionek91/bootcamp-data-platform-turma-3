@@ -3,7 +3,7 @@ from aws_cdk import (
     aws_kinesisfirehose as firehose,
     aws_iam as iam,
 )
-from bootcamp_data_platform_turma_3 import Environment
+from bootcamp_data_platform_turma_3 import Environment, active_environment
 from data_lake.base import BaseDataLakeBucket
 
 
@@ -56,11 +56,10 @@ class KinesisStack(core.Stack):
     def __init__(
         self,
         scope: core.Construct,
-        deploy_env: Environment,
         data_lake_raw_bucket: BaseDataLakeBucket,
         **kwargs,
     ) -> None:
-        self.deploy_env = deploy_env
+        self.deploy_env = active_environment
         self.data_lake_raw_bucket = data_lake_raw_bucket
         super().__init__(scope, id=f"{self.deploy_env.value}-kinesis-stack", **kwargs)
 
