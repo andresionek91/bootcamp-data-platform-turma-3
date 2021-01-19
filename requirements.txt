@@ -10,3 +10,5 @@ aws_cdk.aws_ec2==1.85.0
 aws_cdk.aws_dms==1.85.0
 aws_cdk.aws_emr==1.85.0
 aws_cdk.aws_redshift==1.85.0
+black==20.8b1
+pre-commit==2.9.3
