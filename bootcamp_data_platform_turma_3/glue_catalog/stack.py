@@ -16,7 +16,9 @@ class GlueCatalogStack(core.Stack):
     ) -> None:
         self.data_lake_bucket = data_lake_bucket
         self.deploy_env = active_environment
-        super().__init__(scope, id=f"{self.deploy_env.value}-glue-catalog-stack", **kwargs)
+        super().__init__(
+            scope, id=f"{self.deploy_env.value}-glue-catalog-stack", **kwargs
+        )
 
         self.database = BaseDataLakeGlueDatabase(
             self, data_lake_bucket=self.data_lake_bucket
@@ -38,3 +40,6 @@ class GlueCatalogStack(core.Stack):
         self.orders_table = OrdersTable(
             self, glue_database=self.database, glue_role=self.role
         )
+
+        self.orders_table.node.add_dependency(self.database)
+        self.orders_table.node.add_dependency(self.role)
