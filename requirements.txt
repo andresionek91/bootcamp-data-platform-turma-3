@@ -14,3 +14,4 @@ black==20.8b1
 pre-commit==2.9.3
 fake-web-events
 boto3
+psycopg2-binary
