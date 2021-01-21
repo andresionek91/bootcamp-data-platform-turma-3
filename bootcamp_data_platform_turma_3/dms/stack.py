@@ -64,6 +64,7 @@ class OrdersDMS(dms.CfnReplicationTask):
         data_lake_raw_bucket: BaseDataLakeBucket,
         **kwargs,
     ) -> None:
+        self.data_lake_raw_bucket = data_lake_raw_bucket
         self.common_stack = common_stack
         self.rds_endpoint = dms.CfnEndpoint(
             scope,

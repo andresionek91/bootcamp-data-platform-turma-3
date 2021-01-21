@@ -1,0 +1,5 @@
+dms:
+  tables:
+    - orders
+    - users
+    - payments
