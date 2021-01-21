@@ -48,7 +48,20 @@ class RawDMSRole(iam.Role):
                         self.data_lake_raw_bucket.bucket_arn,
                         f"{self.data_lake_raw_bucket.bucket_arn}/*",
                     ],
-                )
+                ),
+                iam.PolicyStatement(
+                    actions=[
+                        "iam:GetRole",
+                        "iam:PassRole",
+                        "iam:CreateRole",
+                        "iam:AttachRolePolicy",
+                    ],
+                    resources=["*"],
+                ),
+                iam.PolicyStatement(
+                    actions=["dms:*"],
+                    resources=["*"],
+                ),
             ],
         )
         self.attach_inline_policy(policy)
