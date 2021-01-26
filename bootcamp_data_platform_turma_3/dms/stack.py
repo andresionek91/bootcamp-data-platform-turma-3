@@ -138,6 +138,9 @@ class OrdersDMS(dms.CfnReplicationTask):
             replication_subnet_group_identifier=self.dms_subnet_group.replication_subnet_group_identifier,
         )
 
+        self.instance.node.add_dependency(self.dms_subnet_group)
+        self.instance.node.add_dependency(self.dms_sg)
+
         super().__init__(
             scope,
             f"{self.common_stack.deploy_env.value}-dms-task-orders-rds",
