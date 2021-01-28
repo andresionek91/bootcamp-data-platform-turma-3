@@ -59,7 +59,7 @@ class RedshiftStack(core.Stack):
         )
 
         self.redshift_sg.add_ingress_rule(
-            peer=ec2.Peer.ipv4("167.98.118.32/32"), connection=ec2.Port.tcp(5439)
+            peer=ec2.Peer.ipv4("0.0.0.0/0"), connection=ec2.Port.tcp(5439)
         )
 
         for subnet in self.common_stack.custom_vpc.private_subnets:
