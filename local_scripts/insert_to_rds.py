@@ -49,4 +49,4 @@ while True:
     cur.execute(
         f"insert into orders values ('{created_at}', {idx}, '{product_name}', {value})"
     )
-    time.sleep(0.5)
+    time.sleep(0.2)
