@@ -35,9 +35,6 @@ class SpectrumRole(iam.Role):
             ],
         )
         self.attach_inline_policy(policy)
-        self.add_managed_policy(
-            iam.ManagedPolicy.from_aws_managed_policy_name("AmazonDMSVPCManagementRole")
-        )
 
 
 class RedshiftStack(core.Stack):
